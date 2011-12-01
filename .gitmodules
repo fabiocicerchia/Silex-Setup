@@ -1,0 +1,75 @@
+[submodule "lib/Silex"]
+	path = lib/Silex
+	url = git://github.com/fabpot/Silex.git
+[submodule "lib/Behat"]
+	path = lib/Behat
+	url = git://github.com/Behat/Behat.git
+[submodule "lib/XHProf"]
+	path = lib/XHProf
+	url = git://github.com/facebook/xhprof.git
+[submodule "lib/Silex-Extensions"]
+	path = lib/Silex-Extensions
+	url = git://github.com/fate/Silex-Extensions.git
+[submodule "web/css/bootstrap"]
+	path = web/css/bootstrap
+	url = git://github.com/twitter/bootstrap.git
+[submodule "web/minify"]
+	path = web/minify
+	url = git://github.com/mrclay/minify.git
+[submodule "web/js/jquery"]
+	path = web/js/jquery
+	url = https://github.com/jquery/jquery.git
+[submodule "web/js/jquery-ui"]
+	path = web/js/jquery-ui
+	url = https://github.com/jquery/jquery-ui.git
+[submodule "web/js/jquery-mobile"]
+	path = web/js/jquery-mobile
+	url = https://github.com/jquery/jquery-mobile.git
+[submodule "lib/PHPUnit"]
+	path = lib/PHPUnit
+	url = git://github.com/sebastianbergmann/phpunit.git
+[submodule "lib/PHPUnit/phpunit"]
+	path = lib/PHPUnit/phpunit
+	url = git://github.com/sebastianbergmann/phpunit.git
+[submodule "lib/PHPUnit/dbunit"]
+	path = lib/PHPUnit/dbunit
+	url = git://github.com/sebastianbergmann/dbunit.git
+[submodule "lib/PHPUnit/php-file-iterator"]
+	path = lib/PHPUnit/php-file-iterator
+	url = git://github.com/sebastianbergmann/php-file-iterator.git
+[submodule "lib/PHPUnit/php-text-template"]
+	path = lib/PHPUnit/php-text-template
+	url = git://github.com/sebastianbergmann/php-text-template.git
+[submodule "lib/PHPUnit/php-code-coverage"]
+	path = lib/PHPUnit/php-code-coverage
+	url = git://github.com/sebastianbergmann/php-code-coverage.git
+[submodule "lib/PHPUnit/php-token-stream"]
+	path = lib/PHPUnit/php-token-stream
+	url = git://github.com/sebastianbergmann/php-token-stream.git
+[submodule "lib/PHPUnit/php-timer"]
+	path = lib/PHPUnit/php-timer
+	url = git://github.com/sebastianbergmann/php-timer.git
+[submodule "lib/PHPUnit/phpunit-mock-objects"]
+	path = lib/PHPUnit/phpunit-mock-objects
+	url = git://github.com/sebastianbergmann/phpunit-mock-objects.git
+[submodule "lib/PHPUnit/phpunit-selenium"]
+	path = lib/PHPUnit/phpunit-selenium
+	url = git://github.com/sebastianbergmann/phpunit-selenium.git
+[submodule "lib/PHPUnit/phpunit-story"]
+	path = lib/PHPUnit/phpunit-story
+	url = git://github.com/sebastianbergmann/phpunit-story.git
+[submodule "lib/PHPUnit/php-invoker"]
+	path = lib/PHPUnit/php-invoker
+	url = git://github.com/sebastianbergmann/php-invoker.git
+[submodule "Yaml"]
+	path = Yaml
+	url = git://github.com/fabpot/yaml.git
+[submodule "lib/Yaml"]
+	path = lib/Yaml
+	url = git://github.com/symfony/Yaml.git
+[submodule "lib/Component/Yaml"]
+	path = lib/Component/Yaml
+	url = git://github.com/symfony/Yaml.git
+[submodule "lib/Twig-extensions"]
+	path = lib/Twig-extensions
+	url = git://github.com/fabpot/Twig-extensions.git

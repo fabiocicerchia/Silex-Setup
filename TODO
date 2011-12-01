@@ -1,0 +1,9 @@
+test suite to analyze the code
+test suite to generate coverage
+integrate xhprof
+integrate audit
+integrate cache
+integrate logging
+integrate locales
+integrate minify
+HTTP_IF_MODIFIED_SINCE

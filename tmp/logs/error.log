@@ -1,0 +1,221 @@
+[Thu Dec 01 23:39:53 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:39:53 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:39:53 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:39:53 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:39:53 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:39:53 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:40:23 2011] [error] [client 127.0.0.1] client denied by server configuration: /media/DATA/Web/sx_sandbox/web/css/aaa
+[Thu Dec 01 23:43:00 2011] [error] [client 127.0.0.1] Invalid URI in request HEAD /../../ HTTP/1.1
+[Thu Dec 01 23:43:02 2011] [error] [client 127.0.0.1] Invalid URI in request HEAD /../ HTTP/1.1
+[Thu Dec 01 23:44:07 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:44:07 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:44:07 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:44:07 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:44:07 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:44:08 2011] [error] [client 127.0.0.1] File does not exist: /media/DATA/Web/sx_sandbox/web/robots.txt
+[Thu Dec 01 23:48:34 2011] [error] [client 127.0.0.1] Invalid URI in request HEAD /../ HTTP/1.1
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:57:44 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:58:44 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:58:45 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:59:02 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP Catchable fatal error:  Object of class Symfony\\Component\\Routing\\Route could not be converted to string in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Thu Dec 01 23:59:18 2011] [error] [client 127.0.0.1] PHP   8. preg_replace() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:49
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP Notice:  Undefined variable: route in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:01:01 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP Notice:  Undefined variable: route in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:01:13 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP Notice:  Undefined variable: route in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP Notice:  Undefined variable: route in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP Notice:  Undefined variable: route in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 49
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:01:14 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:02:24 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:02:25 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:03:11 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:03:27 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP Warning:  call_user_func() expects parameter 1 to be a valid callback, no array or string given in /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php on line 50
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP Stack trace:
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   1. {main}() /media/DATA/Web/sx_sandbox/web/index.php:0
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   2. Silex\\Application->run() /media/DATA/Web/sx_sandbox/web/index.php:4
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   3. Silex\\Application->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:343
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   4. Symfony\\Component\\HttpKernel\\HttpKernel->handle() /media/DATA/Web/sx_sandbox/lib/Silex/src/Silex/Application.php:357
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   5. Symfony\\Component\\HttpKernel\\HttpKernel->handleRaw() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:71
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   6. call_user_func_array() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:117
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   7. BusinessLogic\\{closure}() /media/DATA/Web/sx_sandbox/lib/Silex/vendor/Symfony/Component/HttpKernel/HttpKernel.php:0
+[Fri Dec 02 00:03:28 2011] [error] [client 127.0.0.1] PHP   8. call_user_func() /media/DATA/Web/sx_sandbox/application/BusinessLogic/LogicApplication.php:50

@@ -1,0 +1,29 @@
+services:
+  twig:
+    directory: "/templates"
+  doctrine:
+    driver: "pdo_sqlite"
+    path:   "/data/app.db"
+
+routes:
+  admin:
+    url:    "/admin.html"
+  admin_users:
+    url:    "/admin/utenti.html"
+  admin_albums:
+    url:    "/admin/album.html"
+  admin_albums_photo:
+    url:    "/admin/album/{album}/foto.html"
+    assert: { album: "[^\/]+" }
+  homepage:
+    url:    "/home.html"
+  albums:
+    url:    "/album.html"
+  albums_photo:
+    url:    "/album/{album}.html"
+    assert: { album: "[^\/]+" }
+  contact:
+    url:    "/contatti.html"
+  page:
+    url:    "/pagina/{page}.html"
+    assert: { page: "[^\.]+" }
