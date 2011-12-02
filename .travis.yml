@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 5.3
+
+env:
+ - APP_ENV=dev
+
+before_script:
+ - ./bin/install_dependencies.sh
+ - pear install PHP_Codesniffer
+
+script:
+ - phpunit --configuration src/test_suite.xml

@@ -25,13 +25,13 @@ http://silex-project.org/doc/extensions/validator.html
 
 */
 class ControllerExtension extends BaseController {
-  public function register(\Silex\Application $app)
-  {
-    $app['blogic'] = $app->share(function() use ($app) { return new \BusinessLogic\ControllerExtension($app); });
-  }
+    public function register(\Silex\Application $app)
+    {
+        $app['business_logic'] = $app->share(function() use ($app) { return new \BusinessLogic\ControllerExtension($app); });
+    }
 
-  public function homepageExecute() {
-    echo "<h1>It works!</h1>";
-    exit;
-  }
+    public function homepageExecute() {
+        echo "<h1>It works!</h1>";
+        exit;
+    }
 }

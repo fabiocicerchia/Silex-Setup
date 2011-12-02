@@ -1,0 +1,11 @@
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+tmp/audit/*
+tmp/cache/*
+tmp/logs/*
+tmp/profiling/*
+tmp/reports/*
+tmp/sessions/*

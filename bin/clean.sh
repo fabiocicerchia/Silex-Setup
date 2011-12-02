@@ -1,38 +1,42 @@
-find . -name ".git" -type d | xargs rm -rf
+#!/bin/bash
 
-./lib/Silex/doc
-./lib/Silex/tests
-./lib/XHProf/examples
-./lib/XHProf/extension/tests
-./lib/XHProf/xhprof_html/docs
-./lib/Silex-Extensions/doc
-./lib/Silex-Extensions/example
-./lib/Silex-Extensions/tests
-./lib/PHPUnit/phpunit/Tests ???
-./lib/PHPUnit/phpunit/build ???
-./lib/PHPUnit/dbunit/Samples
-./lib/PHPUnit/dbunit/Tests ???
-./lib/PHPUnit/php-code-coverage/Tests ???
-./lib/PHPUnit/php-code-coverage/build ???
-./lib/PHPUnit/php-timer/Tests ???
-./lib/PHPUnit/phpunit-mock-objects/Tests ???
-./lib/PHPUnit/phpunit-selenium/Tests ???
-./lib/PHPUnit/phpunit-selenium/build ???
-./lib/PHPUnit/phpunit-selenium/selenium-1-tests ???
-./lib/PHPUnit/phpunit-story/Tests ???
-./lib/PHPUnit/php-invoker/Tests ???
-./lib/PHPUnit/php-invoker/build ???
-./web/css/bootstrap/docs
-./web/css/bootstrap/examples
-./web/css/bootstrap/js/tests
-./web/minify/min_unit_tests
-./web/js/jquery/build ???
-./web/js/jquery/speed ???
-./web/js/jquery/test ???
-./web/js/jquery-ui/build ???
-./web/js/jquery-ui/demos ???
-./web/js/jquery-ui/tests ???
-./web/js/jquery-mobile/build ???
-./web/js/jquery-mobile/docs
-./web/js/jquery-mobile/experiments ???
-./web/js/jquery-mobile/tests ???
+CURRENT_PATH=`dirname "$0`
+find "$CURRENT_PATH" -name ".git" -type d | xargs rm -rf
+find "$CURRENT_PATH" -type f -name "AUTHORS" -or -name "CHANGELOG" -or -name "config.m4" -or -name "CREDITS" -or -name "INSTALL" -or -name "LICENSE" -or -name "Makefile" -or -name "MIT-LICENSE" -or -name "README" -or -name "TODO" | xargs rm
+
+rm -rf "$CURRENT_PATH/../lib/Silex/doc"
+rm -rf "$CURRENT_PATH/../lib/Silex/tests"
+rm -rf "$CURRENT_PATH/../lib/XHProf/examples"
+rm -rf "$CURRENT_PATH/../lib/XHProf/extension/tests"
+rm -rf "$CURRENT_PATH/../lib/XHProf/xhprof_html/docs"
+rm -rf "$CURRENT_PATH/../lib/Silex-Extensions/doc"
+rm -rf "$CURRENT_PATH/../lib/Silex-Extensions/example"
+rm -rf "$CURRENT_PATH/../lib/Silex-Extensions/tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/phpunit/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/phpunit/build"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/dbunit/Samples"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/dbunit/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/php-code-coverage/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/php-code-coverage/build"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/php-timer/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/phpunit-mock-objects/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/phpunit-selenium/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/phpunit-selenium/build"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/phpunit-selenium/selenium-1-tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/phpunit-story/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/php-invoker/Tests"
+rm -rf "$CURRENT_PATH/../lib/PHPUnit/php-invoker/build"
+rm -rf "$CURRENT_PATH/../web/css/bootstrap/docs"
+rm -rf "$CURRENT_PATH/../web/css/bootstrap/examples"
+rm -rf "$CURRENT_PATH/../web/css/bootstrap/js/tests"
+rm -rf "$CURRENT_PATH/../web/minify/min_unit_tests"
+rm -rf "$CURRENT_PATH/../web/js/jquery/build"
+rm -rf "$CURRENT_PATH/../web/js/jquery/speed"
+rm -rf "$CURRENT_PATH/../web/js/jquery/test"
+rm -rf "$CURRENT_PATH/../web/js/jquery-ui/build"
+rm -rf "$CURRENT_PATH/../web/js/jquery-ui/demos"
+rm -rf "$CURRENT_PATH/../web/js/jquery-ui/tests"
+rm -rf "$CURRENT_PATH/../web/js/jquery-mobile/build"
+rm -rf "$CURRENT_PATH/../web/js/jquery-mobile/docs"
+rm -rf "$CURRENT_PATH/../web/js/jquery-mobile/experiments"
+rm -rf "$CURRENT_PATH/../web/js/jquery-mobile/tests"

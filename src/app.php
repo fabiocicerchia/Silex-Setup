@@ -14,13 +14,13 @@ use Silex\Provider\DoctrineServiceProvider;
 $app->register(new BusinessLogic\ControllerExtension($app));
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new DoctrineServiceProvider(), array(
-  'db.options'           => $config['services']['doctrine'],
-  'db.dbal.class_path'   => __DIR__ . '/../../lib/Silex/vendor/doctrine-dbal/lib',
-  'db.common.class_path' => __DIR__ . '/../../lib/Silex/vendor/doctrine-common/lib'
+    'db.options'           => $config['services']['doctrine'],
+    'db.dbal.class_path'   => __DIR__ . '/../lib/Silex/vendor/doctrine-dbal/lib',
+    'db.common.class_path' => __DIR__ . '/../lib/Silex/vendor/doctrine-common/lib'
 ));
 
 // Bind business logic to application
-$app['blogic']->getInternalApplication()->bindRoutes($config['routes']);
+$app['business_logic']->getInternalApplication()->bindRoutes($config['routes']);
 
 // Return application
 return $app;
