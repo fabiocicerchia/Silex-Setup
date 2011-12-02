@@ -1,3 +1,5 @@
+# Silex Setup [![Build Status](https://secure.travis-ci.org/fabiocicerchia/Silex-Setup.png)](http://travis-ci.org/fabiocicerchia/Silex-Setup)
+
 ## Used Packages
 * [Behat](http://behat.org/)
 * [Silex](http://silex.sensiolabs.org/)
