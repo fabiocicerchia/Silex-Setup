@@ -1,42 +1,158 @@
 <?php
+/**
+ * SilexSetup
+ *
+ * PHP version 5
+ *
+ * @category Framework
+ * @package  SilexSetup
+ * @author   Fabio Cicerchia <info@fabiocicerchia.it>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT
+ * @link     https://github.com/fabiocicerchia/Silex-Setup
+ */
 
 namespace BusinessLogic;
 
-abstract class BaseController implements \Silex\ServiceProviderInterface {
+/**
+ * BusinessLogic\BaseController
+ *
+ * @category Framework
+ * @package  SilexSetup
+ * @author   Fabio Cicerchia <info@fabiocicerchia.it>
+ * @license  http://www.opensource.org/licenses/mit-license.php MIT
+ * @link     https://github.com/fabiocicerchia/Silex-Setup
+ * @abstract
+ **/
+abstract class BaseController implements \Silex\ServiceProviderInterface
+{
+    // {{{ properties
+    /**
+     * @static
+     * @access public
+     * @var    object
+     */
     public static $instance = null;
-    protected $application  = null;
-    protected $environment  = null;
-    protected $request      = null;
-    protected $response     = null;
-    protected $twig         = null;
 
-    public static function getInstance() {
+    /**
+     * @access protected
+     * @var    string
+     */
+    protected $application = null;
+
+    /**
+     * @access protected
+     * @var    string
+     */
+    protected $environment = null;
+
+    /**
+     * @access protected
+     * @var    object
+     */
+    protected $request = null;
+
+    /**
+     * @access protected
+     * @var    object
+     */
+    protected $response = null;
+
+    /**
+     * @static
+     * @access protected
+     * @var    object
+     */
+    protected $twig = null;
+    // }}}
+
+    // {{{ getInstance
+    /**
+     * getInstance
+     *
+     * @static
+     * @access public
+     * @return object
+     */
+    public static function getInstance()
+    {
         if (empty(self::$instance)) {
             self::$instance = new self();
         }
 
         return self::$instance;
     }
+    // }}}
 
+    // {{{ register
+    /**
+     * register
+     *
+     * @param Silex\Application $app The instance of Silex Application
+     *
+     * @access public
+     * @throw  Exception
+     * @return void
+     */
     public function register(\Silex\Application $app)
     {
         throw new Exception('This method needs to be redefined!');
     }
+    // }}}
 
-    public function __construct(\Silex\Application &$app) {
+    // {{{ __construct
+    /**
+     * __construct
+     *
+     * @param Silex\Application &$app The instance of Silex Application
+     *
+     * @access public
+     * @return void
+     */
+    public function __construct(\Silex\Application &$app)
+    {
         $this->application = new LogicApplication($app);
-//        $this->environment = $env;
+        //$this->environment = $env;
 
         $this->request  = &$this->application->request;
         $this->response = &$this->application->response;
         //$this->twig     = &$this->application['twig'];
     }
+    // }}}
 
-    public function getInternalApplication() {
+    // {{{ getInternalApplication
+    /**
+     * getInternalApplication
+     *
+     * @access public
+     * @return string
+     */
+    public function getInternalApplication()
+    {
         return $this->application;
     }
+    // }}}
 
-    public function preExecute() { }
+    // {{{ preExecute
+    /**
+     * preExecute
+     *
+     * @access public
+     * @return void
+     */
+    public function preExecute()
+    {
+    }
+    // }}
 
-    public function postExecute() { }
+    // {{{ postExecute
+    /**
+     * postExecute
+     *
+     * @access public
+     * @return void
+     */
+    public function postExecute()
+    {
+    }
+    // }}}
 }

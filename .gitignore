@@ -3,9 +3,12 @@
 *.DS_Store
 *.swp
 *.out
-tmp/audit/*
-tmp/cache/*
+application/Tests/*
+application/Views/*
+application/Locales/*
 tmp/logs/*
+tmp/cache/*
+tmp/sessions/*
+tmp/audit/*
 tmp/profiling/*
 tmp/reports/*
-tmp/sessions/*
