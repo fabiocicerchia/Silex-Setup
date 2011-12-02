@@ -7,8 +7,9 @@ env:
  - APP_ENV=dev
 
 before_script:
- - ./bin/install_dependencies.sh
- - pear install PHP_Codesniffer
+ - git submodule update --init --recursive
+ - pyrus install pear/PHP_Codesniffer
+ - phpenv rehash
 
 script:
  - phpunit --configuration src/test_suite.xml
