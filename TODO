@@ -3,3 +3,8 @@ integrate audit
 integrate logging
 integrate locales
 HTTP_IF_MODIFIED_SINCE
+application/BusinessLogic/LogicApplication.php:            // TODO: IN DEV MAYBE LOG EACH TIME...
+application/BusinessLogic/LogicApplication.php:                // TODO: ADD THE CORRECT NAME FROM CONFIG
+application/BusinessLogic/LogicApplication.php:                // TODO: ADD ALIAS TO VHOST
+src/app.php:require __DIR__ . '/config.php'; // TODO: REMOVE
+src/bootstrap.php:// TODO AGGREGATE INTO YAML WITH config.php

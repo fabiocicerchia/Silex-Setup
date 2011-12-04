@@ -89,7 +89,7 @@ ErrorLog  /path/to/site/tmp/logs/error.log
 
     # CacheDirLevels * CacheDirLength < 20
     <IfModule mod_disk_cache.c>
-        CacheRoot /path/to/site/tmp/cache
+        CacheRoot /path/to/site/tmp/cache/apache
         CacheEnable disk /
 
         CacheSize 524288000 # 500MB

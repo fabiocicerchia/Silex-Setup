@@ -5,9 +5,13 @@
 *.out
 application/Tests/*
 application/Views/*
+application/Views/common/*
 application/Locales/*
 tmp/logs/*
-tmp/cache/*
+tmp/cache/apache/*
+tmp/cache/app/http/*
+tmp/cache/app/*
+tmp/cache/twig/*
 tmp/sessions/*
 tmp/audit/*
 tmp/profiling/*

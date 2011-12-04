@@ -13,6 +13,8 @@
 
 namespace BusinessLogic;
 
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * BusinessLogic\BaseController
  *
@@ -114,8 +116,8 @@ abstract class BaseController implements \Silex\ServiceProviderInterface
         //$this->environment = $env;
 
         $this->request  = &$this->application->request;
-        $this->response = &$this->application->response;
-        //$this->twig     = &$this->application['twig'];
+        $this->response = new Response();
+        $this->twig     = &$app['twig'];
     }
     // }}}
 

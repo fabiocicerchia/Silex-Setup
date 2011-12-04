@@ -73,3 +73,21 @@
 [submodule "lib/Twig-extensions"]
 	path = lib/Twig-extensions
 	url = git://github.com/fabpot/Twig-extensions.git
+[submodule "lib/Symfony/Component/Translation"]
+	path = lib/Symfony/Component/Translation
+	url = git://github.com/symfony/Translation.git
+[submodule "lib/Symfony/Component/Yaml"]
+	path = lib/Symfony/Component/Yaml
+	url = git://github.com/symfony/Yaml.git
+[submodule "lib/Symfony/Component/Form"]
+	path = lib/Symfony/Component/Form
+	url = git://github.com/symfony/Form.git
+[submodule "lib/Symfony/Component/Validator"]
+	path = lib/Symfony/Component/Validator
+	url = git://github.com/symfony/Validator.git
+[submodule "lib/Symfony/Bridge/Twig"]
+	path = lib/Symfony/Bridge/Twig
+	url = git://github.com/symfony/TwigBridge.git
+[submodule "lib/Symfony/Component/Config"]
+	path = lib/Symfony/Component/Config
+	url = git://github.com/symfony/Config.git

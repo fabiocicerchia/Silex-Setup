@@ -1,9 +1,15 @@
-# Silex Setup [![Build Status](https://secure.travis-ci.org/fabiocicerchia/Silex-Setup.png)](http://travis-ci.org/fabiocicerchia/Silex-Setup)
+# Silex Setup ![Project Status](http://stillmaintained.com/fabiocicerchia/Silex-Setup.png) [![Build Status](https://secure.travis-ci.org/fabiocicerchia/Silex-Setup.png)](http://travis-ci.org/fabiocicerchia/Silex-Setup)
 
 ## Used Packages
 * [Behat](http://behat.org/)
 * [Silex](http://silex.sensiolabs.org/)
  * Silex Extensions
+* Symfony
+ * Config
+ * Form
+ * Translation
+ * Validator
+ * Yaml
 * XHProf
 * [PHPUnit](http://http://www.phpunit.de)
  * DbUnit

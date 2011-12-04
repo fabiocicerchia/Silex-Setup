@@ -13,6 +13,12 @@
 
 namespace BusinessLogic;
 
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 /**
  * BusinessLogic\LogicApplication
  *
@@ -140,6 +146,7 @@ class LogicApplication
             }
 
             $app['business_logic']->$method();
+            $this->response->send();
 
             if ($profile) {
                 // TODO: ADD THE CORRECT NAME FROM CONFIG

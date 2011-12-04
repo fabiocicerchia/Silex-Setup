@@ -1,0 +1,32 @@
+all:
+  database:
+    options:
+      driver:   "pdo_mysql"
+      dbname:   "silex"
+      host:     "127.0.0.1"
+      user:     "root"
+      password: ""
+
+  debug: true
+
+  locale:
+    default: "en"
+
+  twig:
+    options:
+      cache:            true
+      strict_variables: true
+
+  session:
+    default_locale: "en"
+
+  translator:
+    messages:
+      en: "en.yml"
+
+  routes:
+    homepage:
+      url: "/"
+
+dev:  ~
+prod: ~

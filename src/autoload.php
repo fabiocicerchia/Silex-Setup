@@ -19,7 +19,10 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(
     array(
-        'Symfony'        => __DIR__ . '/../lib/Silex/vendor',
+        'Symfony'        => array(
+            __DIR__ . '/../lib/Silex/vendor',
+            __DIR__ . '/../lib/'
+        ),
         'Silex'          => __DIR__ . '/../lib/Silex/src',
         'SilexExtension' => __DIR__ . '/../lib/Silex-Extentions/src',
         'BusinessLogic'  => __DIR__ . '/../application',

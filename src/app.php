@@ -11,32 +11,23 @@
  * @link     https://github.com/fabiocicerchia/Silex-Setup
  */
 
-// Include Business Logic
-require_once __DIR__ . '/bootstrap.php';
-
 // Use other namespaces
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Silex\Provider\FormServiceProvider;
+use Silex\Provider\HttpCacheServiceProvider;
+use Silex\Provider\SessionServiceProvider;
+use Silex\Provider\SymfonyBridgesServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
-use Silex\Provider\DoctrineServiceProvider;
+use Silex\Provider\ValidatorServiceProvider;
 
-$silex_path = __DIR__ . '/../lib/Silex/';
+$app = new Silex\Application();
 
 // Registering Extensions
-$app->register(new BusinessLogic\ControllerExtension($app));
+$app->register(new HttpCacheServiceProvider());
+$app->register(new SessionServiceProvider());
+$app->register(new SymfonyBridgesServiceProvider());
+$app->register(new ValidatorServiceProvider());
+$app->register(new FormServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
-$app->register(
-    new DoctrineServiceProvider(),
-    array(
-        'db.options'           => $config['services']['doctrine'],
-        'db.dbal.class_path'   => $silex_path . 'vendor/doctrine-dbal/lib',
-        'db.common.class_path' => $silex_path . 'vendor/doctrine-common/lib'
-    )
-);
-
-// Bind business logic to application
-$app['business_logic']->getInternalApplication()->bindRoutes($config['routes']);
 
 // Return application
 return $app;

@@ -63,7 +63,7 @@ class ControllerExtension extends BaseController
     {
         $app['business_logic'] = $app->share(
             function() use ($app) {
-                return new \BusinessLogic\ControllerExtension($app);
+                return new ControllerExtension($app);
             }
         );
     }
@@ -78,8 +78,8 @@ class ControllerExtension extends BaseController
      */
     public function homepageExecute()
     {
-        echo "<h1>It works!</h1>";
-        exit;
+        $this->response->setCache(array('max_age' => 10, 's_maxage' => 10));
+        $this->twig->loadTemplate('<h1>It works!</h1>');
     }
     // }}}
 }
