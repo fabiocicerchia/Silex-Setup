@@ -11,30 +11,35 @@
  * @link     https://github.com/fabiocicerchia/Silex-Setup
  */
 
-$symfony_path = __DIR__ . '/../lib/Silex/vendor/Symfony/';
-require_once $symfony_path . 'Component/ClassLoader/UniversalClassLoader.php';
-
 use Symfony\Component\ClassLoader\UniversalClassLoader;
+
+define('ROOT_PATH',    __DIR__ . '/..');
+define('SILEX_PATH',   ROOT_PATH . '/lib/Silex');
+define('SYMFONY_PATH', SILEX_PATH . '/vendor/Symfony');
+
+require_once SYMFONY_PATH . '/Component/ClassLoader/UniversalClassLoader.php';
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(
     array(
         'Symfony'        => array(
-            __DIR__ . '/../lib/Silex/vendor',
+            SILEX_PATH . '/vendor',
             __DIR__ . '/../lib/'
         ),
-        'Silex'          => __DIR__ . '/../lib/Silex/src',
-        'SilexExtension' => __DIR__ . '/../lib/Silex-Extentions/src',
-        'BusinessLogic'  => __DIR__ . '/../application',
+        'Silex'          => SILEX_PATH . '/src',
+        'SilexExtension' => ROOT_PATH . '/lib/Silex-Extentions/src',
+        'BusinessLogic'  => ROOT_PATH . '/application',
     )
 );
+
 $loader->registerPrefixes(
     array(
-        'Pimple' => __DIR__ . '/../lib/Silex/vendor/pimple/lib',
+        'Pimple' => SILEX_PATH . '/vendor/pimple/lib',
         'Twig_'  => array(
-            __DIR__ . '/../lib/Silex/vendor/twig/lib',
-            __DIR__ . '/../../lib/Twig-extentions/lib/'
+            SILEX_PATH . '/vendor/twig/lib',
+            ROOT_PATH . '/lib/Twig-extentions/lib/'
         ),
     )
 );
+
 $loader->register();

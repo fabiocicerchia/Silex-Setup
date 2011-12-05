@@ -1,0 +1,98 @@
+<VirtualHost *:80>
+    ServerName my-site.local
+    DocumentRoot /path/to/silex/web
+
+    # MIXED ###################################################################
+    HostnameLookups Off
+    TimeOut 300
+    TraceEnable off
+
+    # LOG #####################################################################
+    LogLevel warn
+
+    LogFormat "%h %l %u %t \"%r\" %>s %b" common
+    LogFormat "\"%r\" %D"                 measure-time
+
+    CustomLog /path/to/silex/tmp/logs/access.log     common
+    CustomLog /path/to/silex/tmp/logs/slow_pages.log measure-time
+
+    ErrorLog  /path/to/silex/tmp/logs/error.log
+
+    # DIRECTORIES #############################################################
+    <Directory /path/to/silex/web>
+        Order Allow,Deny
+        Allow from all
+        AllowOverride All
+
+        Options All -Indexes
+
+        <IfModule mod_actions.c>
+            # LIMIT THE HTTP METHODS ONLY TO REAL USED
+            <LimitExcept GET POST>
+                Order Deny,Allow
+                Deny from all
+            </LimitExcept>
+
+            # THE HEAD METHOD IS INCLUDED INTO GET
+            Script GET       index.php
+            Script POST      index.php
+            Script PUT       index.php
+            Script DELETE    index.php
+            Script CONNECT   index.php
+            Script OPTIONS   index.php
+            Script PATCH     index.php
+            Script PROPFIND  index.php
+            Script PROPPATCH index.php
+            Script MKCOL     index.php
+            Script COPY      index.php
+            Script MOVE      index.php
+            Script LOCK      index.php
+            Script UNLOCK    index.php
+        </IfModule>
+    </Directory>
+
+    <Directory />
+        AllowOverride All
+
+        Options All -Indexes -ExecCGI
+    </Directory>
+
+    SetEnvIf Referer "^http:\/\/my-site.local\/" local_referal
+    <Directory ~ /web/(css|js|media)>
+        Order Deny,Allow
+        Deny from all
+        Allow from env=local_referal
+    </Directory>
+
+
+    # CACHE ###################################################################
+    <IfModule mod_cache.c>
+        CacheDefaultExpire 3600
+        CacheMaxExpire 86400
+
+        # CacheDirLevels * CacheDirLength < 20
+        <IfModule mod_disk_cache.c>
+            CacheRoot /path/to/silex/tmp/cache/apache
+            CacheEnable disk /
+
+            CacheSize 524288000 # 500MB
+            CacheDirLevels 5
+            CacheDirLength 3
+
+            CacheMinFileSize 1
+
+            CacheIgnoreHeaders Set-Cookie
+        </IfModule>
+
+        # MCacheMaxObjectCount * MCacheMaxObjectSize = MAX MEMORY ALLOCATED
+        <IfModule mod_mem_cache.c>
+            CacheEnable mem /
+
+            MCacheSize 102400 # 100MB
+            MCacheMaxObjectCount 512
+            MCacheMinObjectSize 1
+            MCacheMaxObjectSize 2048
+        </IfModule>
+    </IfModule>
+
+</VirtualHost>

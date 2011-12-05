@@ -33,8 +33,9 @@ class ValidateCodingStandardsTest extends PHPUnit_Framework_TestCase
     public function getListOfApplicationFiles()
     {
         $command  = 'find "' . __DIR__ . '/../../" -name "*.php" -type f';
-        $command .= '| egrep -v "' . __DIR__ . '/../../(web|lib)/"';
+        $command .= '| egrep -v "' . __DIR__ . '/../../(web|lib|tmp)/"';
         exec($command, $files);
+
         $files = array_map('realpath', $files);
         $files = preg_grep('#/(Configs|Tests)/#', $files, PREG_GREP_INVERT);
 

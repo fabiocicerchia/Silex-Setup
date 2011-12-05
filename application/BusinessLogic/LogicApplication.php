@@ -53,18 +53,18 @@ class LogicApplication
     }
     // }}}
 
-    // {{{ bindRoutes
+    // {{{ bindRoutesAndLoad
     /**
-     * bindRoutes
+     * bindRoutesAndLoad
      *
      * @param array $routes The routes array directives
      *
      * @access public
      * @return void
      */
-    public function bindRoutes(array $routes)
+    public function bindRoutesAndLoad(array $routes)
     {
-        $app = $this->app;
+        $app = &$this->app;
 
         $app->before(
             function() use ($app) {

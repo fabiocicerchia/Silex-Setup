@@ -91,3 +91,6 @@
 [submodule "lib/Symfony/Component/Config"]
 	path = lib/Symfony/Component/Config
 	url = git://github.com/symfony/Config.git
+[submodule "lib/OWASP-CRS"]
+	path = lib/OWASP-CRS
+	url = git://github.com/fabiocicerchia/OWASP-CRS.git

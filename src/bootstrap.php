@@ -12,31 +12,30 @@
  */
 
 use Symfony\Component\HttpFoundation\Response;
-
+use Symfony\Component\Translation\Loader\YamlFileLoader;
+use Symfony\Component\Yaml\Yaml;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
-use Symfony\Component\Translation\Loader\YamlFileLoader;
-use Symfony\Component\Yaml\Yaml;
 
-// Setup the environment...
+// Setup the environment
 $env = getenv('APP_ENV') ?: 'dev';
 
 // Some configuration
-$config = Yaml::parse(__DIR__ . "/../application/Configs/config.yml");
+$config = Yaml::parse(ROOT_PATH . '/application/Configs/config.yml');
 $config = !isset($config[$env])
           ? array_merge_recursive((array)$config[$env], $config['all'])
           : $config['all'];
 
 $translator_messages = array();
 foreach ($config['translator']['messages'] as $lang => $file) {
-    $translator_messages[$lang] = __DIR__ . '/../application/Locales/' . $file;
+    $translator_messages[$lang] = ROOT_PATH . '/application/Locales/' . $file;
 }
 $app['translator.messages']    = $translator_messages;
 $app['debug']                  = $config['debug'];
 $app['locale']                 = $config['locale']['default'];
 $app['session.default_locale'] = $app['locale'];
-$app['cache.path']             = __DIR__ . '/../tmp/cache/app';
+$app['cache.path']             = ROOT_PATH . '/tmp/cache/app';
 $app['http_cache.cache_dir']   = $app['cache.path'] . '/http';
 
 $app->register(
@@ -46,15 +45,15 @@ $app->register(
 $app['translator.loader'] = new YamlFileLoader();
 
 if ($config['twig']['options']['cache'] === true) {
-    $config['twig']['options']['cache'] = __DIR__ . '/../tmp/cache/twig';
+    $config['twig']['options']['cache'] = ROOT_PATH . '/tmp/cache/twig';
 }
 $app->register(
     new TwigServiceProvider(),
     array(
         'twig.options'  => $config['twig']['options'],
         'twig.path'     => array(
-            __DIR__ . '/../application/Views/common',
-            __DIR__ . '/../application/Views',
+            ROOT_PATH . '/application/Views/common',
+            ROOT_PATH . '/application/Views',
         )
     )
 );
@@ -68,21 +67,21 @@ $app->register(
 //    $twig->addExtension(new Twig_Extensions_Extension_Debug());
 //});
 
-$silex_path = __DIR__ . '/../lib/Silex/vendor/silex/';
-
 $app->register(
     new DoctrineServiceProvider(),
     array(
         'db.options'           => $config['database']['options'],
-        'db.dbal.class_path'   => $silex_path . 'vendor/doctrine-dbal/lib',
-        'db.common.class_path' => $silex_path . 'vendor/doctrine-common/lib',
+        'db.dbal.class_path'   => SILEX_PATH . '/vendor/doctrine-dbal/lib',
+        'db.common.class_path' => SILEX_PATH . '/vendor/doctrine-common/lib',
     )
 );
 
+// Register the Business Logic
 $app->register(new BusinessLogic\ControllerExtension($app));
 
 // Bind business logic to application
-$app['business_logic']->getInternalApplication()->bindRoutes($config['routes']);
+$business_logic = $app['business_logic']->getInternalApplication();
+$business_logic->bindRoutesAndLoad($config['routes']);
 
 // Set error handling
 $app->error(
@@ -91,12 +90,9 @@ $app->error(
         $message = $e instanceof NotFoundHttpException
                    ? 'The requested page could not be found.'
                    : 'We are sorry, but something went terribly wrong.';
-        return new Response(
-            $app['twig']->render(
-                'layout.html.twig',
-                array('content' => $message)
-            ),
-            $code
-        );
+
+        $layout   = 'layout.html.twig';
+        $template = $app['twig']->render($layout, array('content' => $message));
+        return new Response($template, $code);
     }
 );

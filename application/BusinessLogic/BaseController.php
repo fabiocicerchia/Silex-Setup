@@ -14,6 +14,7 @@
 namespace BusinessLogic;
 
 use Symfony\Component\HttpFoundation\Response;
+use Silex\ServiceProviderInterface;
 
 /**
  * BusinessLogic\BaseController
@@ -25,7 +26,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @link     https://github.com/fabiocicerchia/Silex-Setup
  * @abstract
  **/
-abstract class BaseController implements \Silex\ServiceProviderInterface
+abstract class BaseController implements ServiceProviderInterface
 {
     // {{{ properties
     /**
@@ -113,11 +114,9 @@ abstract class BaseController implements \Silex\ServiceProviderInterface
     public function __construct(\Silex\Application &$app)
     {
         $this->application = new LogicApplication($app);
-        //$this->environment = $env;
-
-        $this->request  = &$this->application->request;
-        $this->response = new Response();
-        $this->twig     = &$app['twig'];
+        $this->request     = &$this->application->request;
+        $this->response    = new Response();
+        $this->twig        = &$app['twig'];
     }
     // }}}
 
@@ -144,7 +143,7 @@ abstract class BaseController implements \Silex\ServiceProviderInterface
     public function preExecute()
     {
     }
-    // }}
+    // }}}
 
     // {{{ postExecute
     /**

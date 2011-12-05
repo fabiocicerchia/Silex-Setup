@@ -11,7 +11,7 @@
  * @link     https://github.com/fabiocicerchia/Silex-Setup
  */
 
-// Use other namespaces
+// Use some namespaces
 use Silex\Provider\FormServiceProvider;
 use Silex\Provider\HttpCacheServiceProvider;
 use Silex\Provider\SessionServiceProvider;
@@ -19,9 +19,10 @@ use Silex\Provider\SymfonyBridgesServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 
+// Init the Silex application
 $app = new Silex\Application();
 
-// Registering Extensions
+// Registering extensions
 $app->register(new HttpCacheServiceProvider());
 $app->register(new SessionServiceProvider());
 $app->register(new SymfonyBridgesServiceProvider());

@@ -1,4 +1,9 @@
-# Silex Setup ![Project Status](http://stillmaintained.com/fabiocicerchia/Silex-Setup.png) [![Build Status](https://secure.travis-ci.org/fabiocicerchia/Silex-Setup.png)](http://travis-ci.org/fabiocicerchia/Silex-Setup)
+# Silex Setup
+![Project Status](http://stillmaintained.com/fabiocicerchia/Silex-Setup.png)
+
+[![Build Status](https://secure.travis-ci.org/fabiocicerchia/Silex-Setup.png)](http://travis-ci.org/fabiocicerchia/Silex-Setup)
+
+[![Click here to lend your support to: Silex-Setup and make a donation at www.pledgie.com !](http://www.pledgie.com/campaigns/16385.png?skin_name=chrome)](http://www.pledgie.com/campaigns/16385)
 
 ## Used Packages
 * [Behat](http://behat.org/)
@@ -10,6 +15,7 @@
  * Translation
  * Validator
  * Yaml
+* [OWASP-CRS](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project)
 * XHProf
 * [PHPUnit](http://http://www.phpunit.de)
  * DbUnit
@@ -39,9 +45,6 @@
  * Limit the HTTP method to commons (default: GET and POST)
  * Block the POST request if HTTP_REFERER is missing
  * Minify all CSS and JavaScript
- * Prevent path traversal attack (generate 406 Not Acceptable)
- * Scan GET and POST data to prevent XSS (generate 406 Not Acceptable)
- * Scan GET and POST data to prevent SQL Injection (very simple filter, generate 406 Not Acceptable)
 * Caching
  * Set 1 month of browser-caching to image files
  * Set 2 weeks of browser-caching to CSS and JavaScript
