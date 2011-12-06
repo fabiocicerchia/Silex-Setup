@@ -54,8 +54,7 @@ class ControllerExtension extends BaseController
      */
     public function homepageExecute()
     {
-        $this->response->setCache(array('max_age' => 10, 's_maxage' => 10));
-        $this->twig->loadTemplate('<h1>It works!</h1>');
+        return array('content' => 'It works!');
     }
     // }}}
 }

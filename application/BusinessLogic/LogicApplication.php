@@ -129,15 +129,16 @@ class LogicApplication
      */
     protected function getLambdaFunction()
     {
-        $app = $this->app;
+        $app = &$this->app;
 
         return (function() use ($app) {
             $route   = $app['request']->attributes->get('_route');
             $method  = preg_replace('/_([a-z])/e', 'strtoupper("\1")', $route);
             $method .= "Execute";
 
-            // TODO: IN DEV MAYBE LOG EACH TIME...
-            $profile = (mt_rand(1, 10000) === 1) && extension_loaded('xhprof');
+            $has_extenstion = extension_loaded('xhprof');
+            $run_alternate  = !$app['debug'] && mt_rand(1, 10000) === 1;
+            $profile = $has_extenstion && ($run_alternate || $app['debug']);
             if ($profile) {
                 $xhprof_path = __DIR__ . '/../../lib/XHProf/xhprof_lib/utils/';
                 include_once $xhprof_path . 'xhprof_lib.php';
@@ -145,12 +146,13 @@ class LogicApplication
                 xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
             }
 
-            $app['business_logic']->$method();
-            $this->response->send();
+            $layout    = $app['twig']->loadTemplate('layout.html.twig');
+            $variables = $app['business_logic']->$method();
+            $app['response']->setContent($layout->render((array)$variables));
+            $app['response']->send();
 
-            if ($profile) {
-                // TODO: ADD THE CORRECT NAME FROM CONFIG
-                $profiler_namespace = 'myapp';  // namespace for your application
+            if (false && $profile) {
+                $profiler_namespace = $config['project']['name'];
                 $xhprof_data = xhprof_disable();
                 $xhprof_runs = new XHProfRuns_Default();
 
@@ -158,11 +160,12 @@ class LogicApplication
                 $run_id = implode('_', $keys);
                 $xhprof_runs->save_run($xhprof_data, $profiler_namespace, $run_id);
 
-                // url to the XHProf UI libraries (change the host name and path)
-                // TODO: ADD ALIAS TO VHOST
-                //$url = 'http://host/xhprof/xhprof_html/?run=%s&source=%s';
-                //$prof_url = sprintf($url, $run_id, $profiler_namespace);
-                //echo '<a href="'. $prof_url .'" target="_blank">xhprof output</a>';
+                if ($app['debug']) {
+                    $host = $_SERVER['HTTP_HOST'];
+                    $url = 'http://' . $host . '/XHProf/?run=%s&source=%s';
+                    $p_url = sprintf($url, $run_id, $profiler_namespace);
+                    echo '<a href="'. $p_url .'" target="_blank">XHProf Output</a>';
+                }
             }
         });
     }

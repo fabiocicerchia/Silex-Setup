@@ -2,6 +2,9 @@
     ServerName my-site.local
     DocumentRoot /path/to/silex/web
 
+    # ENVIROMENT ##############################################################
+    SetEnv APP_ENV dev                                              # CHANGE IT
+
     # MIXED ###################################################################
     HostnameLookups Off
     TimeOut 300
@@ -64,18 +67,20 @@
         Allow from env=local_referal
     </Directory>
 
+    # ALIAS ###################################################################
+    #Alias /XHProf /path/to/silex/lib/XHProf/xhprof_html      # DISABLE IN PROD
 
     # CACHE ###################################################################
     <IfModule mod_cache.c>
         CacheDefaultExpire 3600
         CacheMaxExpire 86400
 
-        # CacheDirLevels * CacheDirLength < 20
+                                          # CacheDirLevels * CacheDirLength < 20
         <IfModule mod_disk_cache.c>
             CacheRoot /path/to/silex/tmp/cache/apache
             CacheEnable disk /
 
-            CacheSize 524288000 # 500MB
+            CacheSize 524288000                                         # 500MB
             CacheDirLevels 5
             CacheDirLength 3
 
@@ -84,11 +89,11 @@
             CacheIgnoreHeaders Set-Cookie
         </IfModule>
 
-        # MCacheMaxObjectCount * MCacheMaxObjectSize = MAX MEMORY ALLOCATED
+            # MCacheMaxObjectCount * MCacheMaxObjectSize = MAX MEMORY ALLOCATED
         <IfModule mod_mem_cache.c>
             CacheEnable mem /
 
-            MCacheSize 102400 # 100MB
+            MCacheSize 102400                                           # 100MB
             MCacheMaxObjectCount 512
             MCacheMinObjectSize 1
             MCacheMaxObjectSize 2048

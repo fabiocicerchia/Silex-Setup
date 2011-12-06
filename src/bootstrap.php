@@ -21,6 +21,11 @@ use Silex\Provider\TwigServiceProvider;
 // Setup the environment
 $env = getenv('APP_ENV') ?: 'dev';
 
+error_reporting(0);
+if ($env == 'dev') {
+    error_reporting(E_ALL | E_STRICT);
+}
+
 // Some configuration
 $config = Yaml::parse(ROOT_PATH . '/application/Configs/config.yml');
 $config = !isset($config[$env])
@@ -31,12 +36,14 @@ $translator_messages = array();
 foreach ($config['translator']['messages'] as $lang => $file) {
     $translator_messages[$lang] = ROOT_PATH . '/application/Locales/' . $file;
 }
+$app['env']                    = $env;
 $app['translator.messages']    = $translator_messages;
-$app['debug']                  = $config['debug'];
+$app['debug']                  = (bool)$config['debug'];
 $app['locale']                 = $config['locale']['default'];
 $app['session.default_locale'] = $app['locale'];
 $app['cache.path']             = ROOT_PATH . '/tmp/cache/app';
 $app['http_cache.cache_dir']   = $app['cache.path'] . '/http';
+$app['response']               = new Response();
 
 $app->register(
     new TranslationServiceProvider(),
@@ -57,15 +64,6 @@ $app->register(
         )
     )
 );
-
-//$oldTwigConfiguration = isset($app['twig.configure'])
-//                        ? $app['twig.configure']
-//                        : function(){};
-//$app['twig.configure'] = $app->protect(
-//function($twig) use ($oldTwigConfiguration) {
-//    $oldTwigConfiguration($twig);
-//    $twig->addExtension(new Twig_Extensions_Extension_Debug());
-//});
 
 $app->register(
     new DoctrineServiceProvider(),
@@ -90,6 +88,8 @@ $app->error(
         $message = $e instanceof NotFoundHttpException
                    ? 'The requested page could not be found.'
                    : 'We are sorry, but something went terribly wrong.';
+
+        $message .= $app['debug'] ? (' ' . $e->getMessage()) : '';
 
         $layout   = 'layout.html.twig';
         $template = $app['twig']->render($layout, array('content' => $message));

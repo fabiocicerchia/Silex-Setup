@@ -115,7 +115,7 @@ abstract class BaseController implements ServiceProviderInterface
     {
         $this->application = new LogicApplication($app);
         $this->request     = &$this->application->request;
-        $this->response    = new Response();
+        $this->response    = &$app['response'];
         $this->twig        = &$app['twig'];
     }
     // }}}
