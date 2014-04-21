@@ -1,0 +1,17 @@
+/* HUMANS RESPONSIBLE & COLOPHON */
+    Site name:   My Silex Application
+    Site URL:    http://www.example.com/
+
+/* TEAM */
+    Handyman:    Your Name
+    Contact:     your.name@example.com
+    Twitter:     @yourname
+    From:        City, Country
+
+/* SITE */
+    Last update: 2013/09/24
+    Technology:  Linux, Apache, PHP, JavaScript, REST
+    Components:  Silex, jQuery, Twitter Bootstrap, Google Minify, OWASP-CRS
+    Standards:   HTML5, CSS3, Atom, RSS
+    Language:    English
+    Software:    vim

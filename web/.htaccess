@@ -31,6 +31,7 @@ LimitRequestBody 10485760
     RewriteRule ^.+$               -                         [NC,L]
 
     RewriteRule ^(.*)\.(css|js)$   /minify/index.php?f=$1.$2 [L]
+    RewriteRule ^css/font/(.+)$    /fonts/font-awesome/$1    [L]
     RewriteRule .*                 /index.php                [QSA,L]
 </IfModule>
 

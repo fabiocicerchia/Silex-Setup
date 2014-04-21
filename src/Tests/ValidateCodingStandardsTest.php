@@ -33,7 +33,7 @@ class ValidateCodingStandardsTest extends PHPUnit_Framework_TestCase
     public function getListOfApplicationFiles()
     {
         $command  = 'find "' . __DIR__ . '/../../" -name "*.php" -type f';
-        $command .= '| egrep -v "' . __DIR__ . '/../../(web|lib|tmp)/"';
+        $command .= '| egrep -v "' . __DIR__ . '/../../(web|lib|tmp|vendor)/"';
         exec($command, $files);
 
         $files = array_map('realpath', $files);
@@ -61,10 +61,10 @@ class ValidateCodingStandardsTest extends PHPUnit_Framework_TestCase
      */
     public function testEachClassIsStrictlyValidated($file)
     {
-        $command  = 'phpcs --report=summary --standard=PEAR ';
+        $command  = 'phpcs --report=summary --standard=PSR2 ';
         $command .= '--ignore=Configs/* "' . $file . '"';
         exec($command, $report);
 
-        $this->assertEmpty($report, 'The file doesn\'t respect the PEAR Coding Standard.');
+        $this->assertEmpty($report, 'The file doesn\'t respect the PSR2 Coding Standard.');
     }
 }

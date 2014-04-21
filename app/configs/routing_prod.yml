@@ -1,0 +1,18 @@
+all:
+  routes:
+    index:
+      url:        "/{whatever}"
+	  method:     "index"
+	  controller: "main"
+	  assert:
+	    whatever: ".*"
+      value
+	    whatever: ""
+    test:
+      url:        "/test"
+	  method:     "test"
+	  controller: "main"
+    ajax:
+      url:        "/ajax"
+	  method:     "ajax"
+	  controller: "main"

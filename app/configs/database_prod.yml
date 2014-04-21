@@ -1,0 +1,8 @@
+all:
+  database:
+    options:
+      driver:   "pdo_mysql"
+      dbname:   "silex"
+      host:     "127.0.0.1"
+      user:     "root"
+      password: ""

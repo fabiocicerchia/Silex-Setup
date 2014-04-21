@@ -1,0 +1,162 @@
+<VirtualHost *:80>
+    ServerName my-site.local
+    DocumentRoot /path/to/silex/web
+
+    # ENVIROMENT ##############################################################
+    SetEnv APP_ENV dev                                              # CHANGE IT
+
+    # MIXED ###################################################################
+    HostnameLookups Off
+    TimeOut 300
+    TraceEnable off
+
+    # LOG #####################################################################
+    LogLevel warn
+
+    LogFormat "%h %l %u %t \"%r\" %>s %b" common
+    LogFormat "\"%r\" %D"                 measure-time
+
+    CustomLog %{DOCUMENT_ROOT}/../tmp/logs/access-%{APP_ENV}.log     common
+    CustomLog %{DOCUMENT_ROOT}/../tmp/logs/slow_pages-%{APP_ENV}.log measure-time
+
+    ErrorLog  %{DOCUMENT_ROOT}/../tmp/logs/error-%{APP_ENV}.log
+
+    # DIRECTORIES #############################################################
+    <Directory %{DOCUMENT_ROOT}>
+        Order Allow,Deny
+        Allow from all
+        AllowOverride All
+
+        Options All -Indexes
+
+        <IfModule mod_actions.c>
+            # LIMIT THE HTTP METHODS ONLY TO REAL USED
+            <LimitExcept GET POST>
+                Order Deny,Allow
+                Deny from all
+            </LimitExcept>
+
+            # THE HEAD METHOD IS INCLUDED INTO GET
+            Script GET       index.php
+            Script POST      index.php
+            Script PUT       index.php
+            Script DELETE    index.php
+            Script CONNECT   index.php
+            Script OPTIONS   index.php
+            Script PATCH     index.php
+            Script PROPFIND  index.php
+            Script PROPPATCH index.php
+            Script MKCOL     index.php
+            Script COPY      index.php
+            Script MOVE      index.php
+            Script LOCK      index.php
+            Script UNLOCK    index.php
+        </IfModule>
+    </Directory>
+
+    <Directory />
+        AllowOverride All
+
+        Options All -Indexes -ExecCGI
+    </Directory>
+
+    SetEnvIf Referer "^http:\/\/my-site.local\/" local_referal
+    <Directory ~ /web/(css|js|media)>
+        Order Deny,Allow
+        Deny from all
+        Allow from env=local_referal
+    </Directory>
+
+    # ALIAS ###################################################################
+    #Alias /XHProf %{DOCUMENT_ROOT}/../lib/XHProf/xhprof_html      # DISABLE IN PROD
+
+    # CACHE ###################################################################
+    <IfModule mod_cache.c>
+        CacheDefaultExpire 3600
+        CacheMaxExpire 86400
+
+                                          # CacheDirLevels * CacheDirLength < 20
+        <IfModule mod_disk_cache.c>
+            CacheRoot %{DOCUMENT_ROOT}/../tmp/cache/apache
+            CacheEnable disk /
+
+            CacheSize 524288000                                         # 500MB
+            CacheDirLevels 5
+            CacheDirLength 3
+
+            CacheMinFileSize 1
+
+            CacheIgnoreHeaders Set-Cookie
+        </IfModule>
+
+            # MCacheMaxObjectCount * MCacheMaxObjectSize = MAX MEMORY ALLOCATED
+        <IfModule mod_mem_cache.c>
+            CacheEnable mem /
+
+            MCacheSize 102400                                           # 100MB
+            MCacheMaxObjectCount 512
+            MCacheMinObjectSize 1
+            MCacheMaxObjectSize 2048
+        </IfModule>
+    </IfModule>
+
+    # EXPIRES #################################################################
+    <IfModule mod_expires.c>
+        ExpiresActive On
+
+        ExpiresByType image/x-icon             "access plus 1 month"
+        ExpiresByType image/vnd.microsoft.icon "access plus 1 month"
+        ExpiresByType image/gif                "access plus 1 month"
+        ExpiresByType image/jpeg               "access plus 1 month"
+        ExpiresByType image/png                "access plus 1 month"
+        ExpiresByType text/javascript          "access plus 2 week"
+        ExpiresByType application/javascript   "access plus 2 week"
+        ExpiresByType application/x-javascript "access plus 2 week"
+        ExpiresByType text/css                 "access plus 2 week"
+    </IfModule>
+
+    # DEFLATE #################################################################
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/plain
+        AddOutputFilterByType DEFLATE text/html
+        AddOutputFilterByType DEFLATE text/xml
+        AddOutputFilterByType DEFLATE text/css
+        AddOutputFilterByType DEFLATE application/xml
+        AddOutputFilterByType DEFLATE application/xhtml+xml
+        AddOutputFilterByType DEFLATE application/rss+xml
+        AddOutputFilterByType DEFLATE text/javascript
+        AddOutputFilterByType DEFLATE application/javascript
+        AddOutputFilterByType DEFLATE application/x-javascript
+    </IfModule>
+
+	# PHP #####################################################################
+	<IfModule mod_php.c>
+		# If there are too many errors that are blocking the application:
+		#  - Set display_errors to Off
+		#  - Set dispay_startup_errors to Off
+		#  - Check manually the log file using:
+		#    sudo tail -f /tmp/log/httpd/error_log
+		php_flag display_errors                  On
+		php_flag display_startup_errors          On
+		php_flag html_errors                     On
+		php_flag log_errors                      On
+		php_flag magic_quotes_gpc                Off
+		php_flag register_globals                Off
+		php_flag track_errors                    On
+		php_flag xdebug.collect_vars             On
+		php_flag xdebug.collect_vars             On
+		php_flag xdebug.dump_globals             On
+		php_flag xdebug.show_local_vars          On
+		php_value error_log                      "%{DOCUMENT_ROOT}/../tmp/log/php-%{APP_ENV}.log"
+		php_value error_reporting                32767
+		php_value xdebug.collect_params          4
+		php_value xdebug.dump.COOKIE             *
+		php_value xdebug.dump.FILES              *
+		php_value xdebug.dump.GET                *
+		php_value xdebug.dump.POST               *
+		php_value xdebug.dump.SESSION            *
+		php_value xdebug.profiler_enable_trigger 1
+		php_value xdebug.profiler_output_dir     "%{DOCUMENT_ROOT}/../tmp/profiling/"
+		php_value xdebug.scream                  0
+    </IfModule>
+</VirtualHost>

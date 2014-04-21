@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+{% block html_tag %}
+<html>
+{% endblock html_tag %}
+
+{% block head %}
+<head>
+    <meta charset="UTF-8" />
+    {% block head_style %}
+    {# Override this block to add your own files! #}
+    {# To use this without less use the base_css.html.twig template as your base
+     # Be sure you understand whats going on: have a look into
+     # https://github.com/phiamo/MopaBootstrapBundle/blob/master/Resources/doc/css-vs-less.md
+     #}
+    <link href="/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="/css/bootstrap/bootstrap-theme.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="/css/main.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="/css/font-awesome/font-awesome.css" type="text/css" rel="stylesheet" media="screen" />
+    {% endblock head_style %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block head_script %}
+    {# Overwrite this block to add your own js here, to get them generated into final files #}
+    {% endblock head_script %}
+
+    <title>{% block title %}My Silex App{% endblock title %}</title>
+    {% block head_bottom %}
+    {% endblock head_bottom %}
+</head>
+{% endblock head %}
+
+{% block body_tag %}
+<body data-spy="scroll">
+{% endblock body_tag %}
+
+{% block body_start %}
+{% endblock body_start %}
+
+
+{% block body %}
+    {% block navbar %}
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">
+                    <i class="icon-thumbs-up"></i>
+                    My Silex App
+                </a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
+                        <li>
+                            <form>
+                                <input type="text" name="query" value="" class="input-medium search-query" />
+                                <input type="submit" name="send" value="search" class="btn" />
+                            </form>
+                        </li>
+                        <li><a href="#">Sign Up</a></li>
+                        <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                        <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                            <form method="post" action="#" accept-charset="UTF-8">
+                                <input style="margin-bottom: 15px;" type="text" id="username" name="_username" value="" placeholder="Username" required="required" />
+                                <input style="margin-bottom: 15px;" type="password" id="password" name="_password" placeholder="Password" required="required" />
+
+                                <input style="float: left; margin-right: 10px;" type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                <label for="remember_me">Remember me</label>
+
+                                <input class="btn btn-primary btn-block" type="submit" id="_submit" name="_submit" value="Login" />
+                                <label style="text-align:center;margin-top:5px">or</label>
+                                <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+                                <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock navbar %}
+    {% block content_header '' %}
+
+    {% block container %}
+    <div class="container">
+        <div class="row">
+            {% block container_inner %}
+            <!--div class="span2">
+                {% block sidebar %}
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Sidebar</li>
+                        <li class="active"><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="nav-header">Sidebar</li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="nav-header">Sidebar</li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                {% endblock %}
+            </div-->
+            <div class="span12">
+                {% block content_right %}
+                {% endblock %}
+            </div>
+        </div>
+        {% endblock %}
+    </div><!--/row-->
+
+    <hr>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <h3 class="widget-title">Address</h3>
+                    <div class="widget-inner">
+                        <address>
+                            <ul class="icons">
+                                <li><i class="icon-map-marker"></i>Street Name 432/2, London, 90210</li>
+                                <li><i class="icon-phone"></i>(123) 456-7890</li>
+                                <li><i class="icon-print"></i>(123) 456-7890</li>
+                                <li><i class="icon-envelope"></i><a href="mailto:#">info@email.com</a></li>
+                            </ul>
+                        </address>
+                        <p><a class="btn btn-primary" href="./contact.html">Get in Touch</a></p>
+                    </div>
+                    <h3 class="widget-title">Follow Us</h3>
+                    <div class="widget-inner">
+                        <ul class="social clearfix">
+                            <li><a rel="tooltip" data-placement="top" data-original-title="Facebook" href="#">
+                                <i class="icon-facebook-sign"></i>
+                            </a></li>
+                            <li><a rel="tooltip" data-placement="top" data-original-title="Twitter" href="#">
+                                <i class="icon-twitter-sign"></i>
+                            </a></li>
+                            <li><a rel="tooltip" data-placement="top" data-original-title="Linkedin" href="#">
+                                <i class="icon-linkedin-sign"></i>
+                            </a></li>
+                            <li><a rel="tooltip" data-placement="top" data-original-title="Pinterest" href="#">
+                                <i class="icon-pinterest-sign"></i>
+                            </a></li>
+                            <li><a rel="tooltip" data-placement="top" data-original-title="Google+" href="#">
+                                <i class="icon-google-plus-sign"></i>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="span4">
+                    <h3 class="widget-title">About Us</h3>
+                    <div class="widget-inner">
+                        <p>Ut eu nulla eget massa blandit eleifend vel sedis lacus. Sed at viverra nulla.
+                        Fusce vel adipisci odio. Phasellus commodo, mauris eget pharetra scelerisque, est justo lacinia tortor.</p>
+                    </div>
+                    <h3 class="widget-title">Stay Updated</h3>
+                    <div class="widget-inner">
+                        <p>Sign up for our newsletter. We won't share your email address.</p>
+                        <form>
+                            <div class="input-append">
+                                <input type="email" placeholder="Email Address" class="span3 placeholder" name="email">
+                                <button class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="span4">
+                    <h3 class="widget-title">Latest Blog Posts</h3>
+                    <div class="widget-inner">
+                        <ul class="icons lates-blog-post">
+                            <li><i class="icon-chevron-right"></i><a href="#">Lorem ipsum dolor sit amet</a><br>Aliquam nunc erat, suscipit molestie interdum eget, molestie vel eros.</li>
+                            <li><i class="icon-chevron-right"></i><a href="#">Quisque hendrerit nisl vitae magna </a><br>Aenean a sapien in magna luctus aliquet in eu purus. Sed venenatis luctus varius.</li>
+                            <li><i class="icon-chevron-right"></i><a href="#">Aenean gravida tincidunt velit nec congue </a><br>Sed a rhoncus mi. Morbi eu elit sapien, eu adipiscing nisl. Duis in turpis et mi molestie bibendum eget eget mauris.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% block footer %}
+    <section id="footer-menu">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <p class="copyright">&copy; Copyright My Silex App {{ "now" | date("Y") }}.
+            </div>
+            <div class="span4">
+                <ul class="pull-right">
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
+    {% endblock %}
+    {% endblock %}
+
+    {% block foot_script %}
+    {# To only use a subset or add more js overwrite and copy paste this block
+    To speed up page loads save a copy of jQuery in your project and override this block to include the correct path
+    Otherwise the regeneration is done on every load in dev more with use_controller: true
+     #}
+    <script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+{% endblock foot_script %}
+{% endblock body %}
+</body>
+</html>

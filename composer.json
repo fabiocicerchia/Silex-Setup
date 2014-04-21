@@ -1,0 +1,90 @@
+{
+    "require": {
+        "php":                                   ">=5.3.3",
+        "behat/behat":                           "3.0.*",
+        "components/jquery":                     "1.11.*",
+        "components/jqueryui":                   "1.10.*",
+        "dflydev/doctrine-orm-service-provider": "1.*",
+        "doctrine/common":                       "2.4.*",
+        "doctrine/dbal":                         "2.4.*",
+        "gregoryloucas/Fontstrap":               "*",
+        "igorw/config-service-provider":         "1.2.*",
+        "knplabs/console-service-provider":      "dev-master",
+        "kphoen/negotiation-service-provider":   "~1.0",
+        "mheap/Silex-Assetic":                   "1.0.2",
+        "monolog/monolog":                       ">=1.0.0",
+        "mrclay/minify":                         "*",
+        "nervo/yuicompressor":                   "2.4.8",
+        "phpunit/dbunit":                        "*",
+        "phpunit/php-code-coverage":             "*",
+        "phpunit/php-file-iterator":             "*",
+        "phpunit/php-invoker":                   "*",
+        "phpunit/php-text-template":             "*",
+        "phpunit/php-timer":                     "*",
+        "phpunit/php-token-stream":              "*",
+        "phpunit/phpunit":                       "3.7.*",
+        "phpunit/phpunit-mock-objects":          "*",
+        "phpunit/phpunit-selenium":              "*",
+        "phpunit/phpunit-story":                 "*",
+        "silex/silex":                           "1.2.0",
+        "silex/web-profiler":                    "~1.0",
+        "spiderlabs/owasp-modsecurity-crs":      "*",
+        "symfony/class-loader":                  "2.4.*",
+        "symfony/config":                        "2.4.*",
+        "symfony/console":                       "2.4.*",
+        "symfony/dependency-injection":          "2.4.*",
+        "symfony/finder":                        "2.2.*",
+        "symfony/form":                          "2.4.*",
+        "symfony/monolog-bridge":                "2.4.*",
+        "symfony/process":                       "2.4.*",
+        "symfony/security":                      "2.4.*",
+        "symfony/translation":                   "2.4.*",
+        "symfony/twig-bridge":                   "2.4.*",
+        "symfony/validator":                     "2.4.*",
+        "symfony/yaml":                          "2.4.*",
+        "twbs/bootstrap":                        "*",
+        "twig/extensions":                       "*"
+    },
+    "require-dev": {
+        "facebook/xhprof":               "dev-master",
+        "oziks/xhprof-service-provider": "dev-master",
+        "symfony/browser-kit":           "2.4.*",
+        "symfony/css-selector":          "2.4.*"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/facebook/xhprof"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "gregoryloucas/fontstrap",
+                "version": "3.0.2",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/gregoryloucas/Fontstrap",
+                    "reference": "Font-Awesome-More-v3.0.2"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "spiderlabs/owasp-modsecurity-crs",
+                "version": "2.2.9",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/SpiderLabs/owasp-modsecurity-crs",
+                    "reference": "2.2.9"
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "app/",
+            "App\\": "src/"
+        }
+    }
+}

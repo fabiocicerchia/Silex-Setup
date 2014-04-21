@@ -2,6 +2,8 @@ language: php
 
 php:
   - 5.3
+  - 5.4
+  - hhvm
 
 env:
  - APP_ENV=dev
@@ -10,6 +12,7 @@ before_script:
  - git submodule update --init --recursive
  - pyrus install pear/PHP_Codesniffer
  - phpenv rehash
+ - composer install
 
 script:
  - phpunit --configuration src/test_suite.xml

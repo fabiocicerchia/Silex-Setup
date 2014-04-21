@@ -1,0 +1,26 @@
+db:
+  options:
+    driver:   "pdo_sqlite"
+    path:     "/path/to/silex/tmp/db.sqlite"
+
+all:
+
+  debug: true
+
+  locale:
+    default: "en"
+
+  twig:
+    options:
+      cache:            true
+      strict_variables: true
+
+  session:
+    default_locale: "en"
+
+  translator:
+    messages:
+      en: "en.yml"
+
+dev:  ~
+prod: ~
