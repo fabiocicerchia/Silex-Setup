@@ -8,8 +8,12 @@ php:
 env:
  - APP_ENV=dev
 
+branches:
+  only:
+    - develop
+    - master
+
 before_script:
- - git submodule update --init --recursive
  - pyrus install pear/PHP_Codesniffer
  - phpenv rehash
  - composer install
