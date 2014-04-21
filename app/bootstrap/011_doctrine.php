@@ -20,7 +20,7 @@ $dbSchemaDirectory = ROOT_PATH . '/app/entities/Models'; // TODO: config.yml
 
 // TODO: http://stackoverflow.com/questions/15909096/silex-and-doctrine-orm
 $app['em'] = function ($app) {
-	$config = Setup::createAnnotationMetadataConfiguration(array($dbSchemaDirectory), $app['debug']);
+    $config = Setup::createAnnotationMetadataConfiguration(array($dbSchemaDirectory), $app['debug']);
     $entityManager = EntityManager::create($app['db']['options'], $config);
 
     return $entityManager;
@@ -37,17 +37,17 @@ $app->register(
 );
 
 $app->register(
-	new DoctrineOrmServiceProvider,
-	array(
-    	'orm.em.options' => array(
-			'mappings' => array(
-				array(
-					'type' => 'annotation',
-					'path' => $dbSchemaDirectory
-				)
-			)
-    	),
-	)
+    new DoctrineOrmServiceProvider,
+    array(
+        'orm.em.options' => array(
+            'mappings' => array(
+                array(
+                    'type' => 'annotation',
+                    'path' => $dbSchemaDirectory
+                )
+            )
+        ),
+    )
 );
 
 // $app['em']->persist($customer);

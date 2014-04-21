@@ -19,32 +19,35 @@ use Assetic\Filter\Yui\JsCompressorFilter;
 // ASSETIC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $app['assetic.enabled'] = true;
 
-$app->register(new AsseticServiceProvider(), array(
-    'assetic.path_to_web' => ROOT_PATH,
-    'assetic.options' => array(
-        'auto_dump_assets' => true,
-        'debug'            => $app['debug']
-    ),
-    'assetic.filters' => $app->protect(
-		function($fm) {
-        	$fm->set('cssmin', new CssMinFilter());
+$app->register(
+    new AsseticServiceProvider(),
+    array(
+        'assetic.path_to_web' => ROOT_PATH,
+        'assetic.options' => array(
+            'auto_dump_assets' => true,
+            'debug'            => $app['debug']
+        ),
+        'assetic.filters' => $app->protect(
+            function ($fm) {
+                $fm->set('cssmin', new CssMinFilter());
 
-			$fm->set(
-				'yui_css',
-				new CssCompressorFilter(
-	            	ROOT_PATH . '/vendor/nervo/yuicompressor/yuicompressor.jar'
-	        	)
-			);
+                $fm->set(
+                    'yui_css',
+                    new CssCompressorFilter(
+                        ROOT_PATH . '/vendor/nervo/yuicompressor/yuicompressor.jar'
+                    )
+                );
 
-			$fm->set(
-				'yui_js',
-				new JsCompressorFilter(
-	            	ROOT_PATH . '/vendor/nervo/yuicompressor/yuicompressor.jar'
-	        	)
-			);
-    	}
-	)
-));
+                $fm->set(
+                    'yui_js',
+                    new JsCompressorFilter(
+                        ROOT_PATH . '/vendor/nervo/yuicompressor/yuicompressor.jar'
+                    )
+                );
+            }
+        )
+    )
+);
 
 //$app['assetic.asset_manager'] = $app->share(
 //    $app->extend('assetic.asset_manager', function($am, $app) {

@@ -45,13 +45,13 @@ use App\Utils\DocBlockParser;
 // REGISTER SERVICES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $bootstrapFiles = glob(ROOT_PATH . '/app/bootstrap/*.php');
 sort($bootstrapFiles);
-foreach($bootstrapFiles as $file) {
+foreach ($bootstrapFiles as $file) {
     include_once $file;
 }
 
 // MOUNT CONTROLLERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $controllerFiles = glob(ROOT_PATH . '/app/Controllers/*.php');
-foreach($controllerFiles as $file) {
+foreach ($controllerFiles as $file) {
     $className = 'Controllers\\' . substr(basename($file), 0, -4);
     $docBlock  = DocBlockParser::parseClass($className);
     if (!isset($docBlock['mount'])) {

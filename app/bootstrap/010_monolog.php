@@ -15,8 +15,8 @@ use Silex\Provider\MonologServiceProvider;
 
 // MONOLOG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $app->register(
-	new MonologServiceProvider(),
-	array(
-    	'monolog.logfile' => ROOT_PATH . '/tmp/logs/' . $app['env'] . '.log',
-	)
+    new MonologServiceProvider(),
+    array(
+        'monolog.logfile' => ROOT_PATH . '/tmp/logs/' . $app['env'] . '.log',
+    )
 );

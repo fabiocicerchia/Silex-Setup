@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+// Autoloader
+define('ROOT_PATH',    __DIR__ . '/../');
+require_once ROOT_PATH . '/vendor/autoload.php';
+
+// Get Silex Application
+$app = require_once ROOT_PATH . '/app/app.php';
+
+// Include Business Logic
+require ROOT_PATH . '/app/bootstrap.php';
+
+$console = require ROOT_PATH . '/app/console.php';
+$console->run();

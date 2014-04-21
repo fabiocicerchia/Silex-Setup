@@ -31,11 +31,11 @@ $app->register(
 );
 
 $app['twig'] = $app->share(
-	$app->extend(
-		'twig',
-		function($twig, $app) {
-    		// add custom globals, filters, tags, ...
-    		return $twig;
-		}
-	)
+    $app->extend(
+        'twig',
+        function ($twig, $app) {
+            // add custom globals, filters, tags, ...
+            return $twig;
+        }
+    )
 );

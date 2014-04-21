@@ -18,7 +18,7 @@ use Symfony\Component\Translation\Loader\YamlFileLoader;
 $app->register(
     new TranslationServiceProvider(),
     array(
-		'locale_fallback' => $config['locale']['default']
-	)
+        'locale_fallback' => $config['locale']['default']
+    )
 );
 $app['translator.loader'] = new YamlFileLoader();

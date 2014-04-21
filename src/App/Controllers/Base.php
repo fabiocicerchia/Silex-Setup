@@ -70,11 +70,11 @@ abstract class Base implements ControllerProviderInterface
      */
     protected $twig = null;
 
-	/**
+    /**
      * @access protected
      * @var    boolean
      */
-	protected $isAjax = false;
+    protected $isAjax = false;
     // }}}
 
     // {{{ __construct
@@ -86,33 +86,35 @@ abstract class Base implements ControllerProviderInterface
      * @access public
      * @return void
      */
-	public function __construct(Application &$app)
+    public function __construct(Application &$app)
     {
         $this->application = $app;
         $this->response    = $app['response'];
         $this->twig        = $app['twig'];
-		$this->isAjax      = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+        $this->isAjax      = !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
+                             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
     }
     // }}}
 
-	public function connect(Application $app)
-	{
-		$controller = $app['controllers_factory'];
+    public function connect(Application $app)
+    {
+        $controller = $app['controllers_factory'];
 
-		$refClass = new \ReflectionClass($this);
-		$methods  = $refClass->getMethods(\ReflectionMethod::IS_PUBLIC);
+        $refClass = new \ReflectionClass($this);
+        $methods  = $refClass->getMethods(\ReflectionMethod::IS_PUBLIC);
 
-		foreach ($methods as $method) {
-			$methodName = $method->getName();
-			if (preg_match('/action.+$/', $methodName) > 0) {
-				$this->registerMethod($methodName, $this, $controller);
-			}
-		}
+        foreach ($methods as $method) {
+            $methodName = $method->getName();
+            if (preg_match('/action.+$/', $methodName) > 0) {
+                $this->registerMethod($methodName, $this, $controller);
+            }
+        }
 
-		return $controller;
-	}
+        return $controller;
+    }
 
-	protected function registerMethod($methodName, $class, &$controller) {
+    protected function registerMethod($methodName, $class, &$controller)
+    {
         $docBlock = DocBlockParser::parseMethod($class, $methodName);
         if (!isset($docBlock['route'])) {
             return;
@@ -142,35 +144,34 @@ abstract class Base implements ControllerProviderInterface
                 $funct->value($param, $value);
             }
         }
-		/*
-		if (extension_loaded('xhprof')) {
-			$app['monolog']->addInfo('Profiling started.');
-			$app['xhprof']->start();
-		}
 
-		$app['monolog']->addInfo('Pre Execute.');
-		$app['business_logic']->preExecute();
+        //if (extension_loaded('xhprof')) {
+        //    $app['monolog']->addInfo('Profiling started.');
+        //    $app['xhprof']->start();
+        //}
 
-		$app['monolog']->addInfo(sprintf('Template Name: "%s".', $tplName . '.html.twig'));
-		$layout = $app['twig']->loadTemplate($tplName . '.html.twig');
+        //$app['monolog']->addInfo('Pre Execute.');
+        //$app['business_logic']->preExecute();
 
-		$app['monolog']->addInfo(sprintf('Executing "%s".', $method));
-		$variables = $app['business_logic']->$method();
+        //$app['monolog']->addInfo(sprintf('Template Name: "%s".', $tplName . '.html.twig'));
+        //$layout = $app['twig']->loadTemplate($tplName . '.html.twig');
 
-		$app['response']->setContent($layout->render((array) $variables));
-		//$app['response']->send();
+        //$app['monolog']->addInfo(sprintf('Executing "%s".', $method));
+        //$variables = $app['business_logic']->$method();
 
-		$app['monolog']->addInfo('Post Execute.');
-		$app['business_logic']->postExecute();
+        //$app['response']->setContent($layout->render((array) $variables));
+        ////$app['response']->send();
 
-		if (extension_loaded('xhprof')) {
-			$app['xhprof']->end();
-			$app['monolog']->addInfo('Profiling finished.');
-		}
+        //$app['monolog']->addInfo('Post Execute.');
+        //$app['business_logic']->postExecute();
 
-		return $app['response'];
-		*/
-	}
+        //if (extension_loaded('xhprof')) {
+        //    $app['xhprof']->end();
+        //    $app['monolog']->addInfo('Profiling finished.');
+        //}
+
+        //return $app['response'];
+    }
 
     public function boot(Application $app)
     {

@@ -18,8 +18,8 @@
     verbose="false">
     <testsuites>
         <testsuite name="Test_Suite">
-            <directory suffix='Test.php'>./Tests/</directory>
-            <directory suffix='Test.php'>../app/Tests/</directory>
+            <directory suffix='Test.php'>src/Tests/</directory>
+            <directory suffix='Test.php'>app/Tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
@@ -28,6 +28,6 @@
         </blacklist>
     </filter>
     <logging>
-        <log type="coverage-html" target="../tmp/reports/code_coverage" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-html" target="tmp/reports/code_coverage" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70"/>
     </logging>
 </phpunit>
