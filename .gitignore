@@ -7,6 +7,7 @@ app/Tests/*
 app/Views/*
 app/Views/common/*
 app/Locales/*
+tmp/*.sqlite
 tmp/logs/*
 tmp/cache/apache/*
 tmp/cache/app/http/*

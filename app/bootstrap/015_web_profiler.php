@@ -15,6 +15,7 @@ use Silex\Provider\WebProfilerServiceProvider;
 
 // WEB PROFILER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if (PHP_SAPI !== 'cli') {
+    $app['security.authentication_providers'] = array();
     $app->register(
         new WebProfilerServiceProvider(),
         array(

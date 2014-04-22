@@ -13,26 +13,10 @@
 
 use App\Utils\DocBlockParser;
 
-//$app->register(new SecurityServiceProvider(), array(
-//    'security.firewalls' => array(
-//        'admin' => array(
-//            'pattern' => '^/',
-//            'form'    => array(
-//                'login_path'         => '/login',
-//                'username_parameter' => 'form[username]',
-//                'password_parameter' => 'form[password]',
-//            ),
-//            'logout'    => true,
-//            'anonymous' => true,
-//            'users'     => $app['security.users'],
-//        ),
-//    ),
-//));
-//
 //$app['security.encoder.digest'] = $app->share(function ($app) {
 //    return new PlaintextPasswordEncoder();
 //});
-//
+
 //$app->register(new TranslationServiceProvider());
 //$app['translator'] = $app->share($app->extend('translator', function($translator, $app) {
 //    $translator->addLoader('yaml', new YamlFileLoader());
@@ -48,6 +32,9 @@ sort($bootstrapFiles);
 foreach ($bootstrapFiles as $file) {
     include_once $file;
 }
+
+// Boot your application
+$app->boot();
 
 // MOUNT CONTROLLERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $controllerFiles = glob(ROOT_PATH . '/app/Controllers/*.php');

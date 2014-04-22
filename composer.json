@@ -1,34 +1,38 @@
 {
+    "name": "fabiocicerchia/silex-setup",
+    "description": "My Silex App",
+    "license": "MIT",
     "require": {
         "php":                                   ">=5.3.3",
         "behat/behat":                           "3.0.*",
         "components/jquery":                     "1.11.*",
         "components/jqueryui":                   "1.10.*",
+        "cortext/silex-simpleuser":              "0.6.3",
         "dflydev/doctrine-orm-service-provider": "1.*",
         "doctrine/common":                       "2.4.*",
         "doctrine/dbal":                         "2.4.*",
-        "gregoryloucas/Fontstrap":               "*",
+        "gregoryloucas/fontstrap":               "3.0.2",
         "igorw/config-service-provider":         "1.2.*",
         "knplabs/console-service-provider":      "dev-master",
         "kphoen/negotiation-service-provider":   "~1.0",
         "mheap/Silex-Assetic":                   "1.0.2",
-        "monolog/monolog":                       ">=1.0.0",
-        "mrclay/minify":                         "*",
+        "monolog/monolog":                       "1.9.0",
+        "mrclay/minify":                         "2.2.0",
         "nervo/yuicompressor":                   "2.4.8",
-        "phpunit/dbunit":                        "*",
-        "phpunit/php-code-coverage":             "*",
-        "phpunit/php-file-iterator":             "*",
-        "phpunit/php-invoker":                   "*",
-        "phpunit/php-text-template":             "*",
-        "phpunit/php-timer":                     "*",
-        "phpunit/php-token-stream":              "*",
+        "phpunit/dbunit":                        "1.3.1",
+        "phpunit/php-code-coverage":             "2.0.5",
+        "phpunit/php-file-iterator":             "1.3.4",
+        "phpunit/php-invoker":                   "1.1.3",
+        "phpunit/php-text-template":             "1.2.0",
+        "phpunit/php-timer":                     "1.0.*",
+        "phpunit/php-token-stream":              "1.2.2",
         "phpunit/phpunit":                       "3.7.*",
-        "phpunit/phpunit-mock-objects":          "*",
-        "phpunit/phpunit-selenium":              "*",
-        "phpunit/phpunit-story":                 "*",
+        "phpunit/phpunit-mock-objects":          "1.2.3",
+        "phpunit/phpunit-selenium":              "1.3.3",
+        "phpunit/phpunit-story":                 "1.0.2",
         "silex/silex":                           "1.2.0",
         "silex/web-profiler":                    "~1.0",
-        "spiderlabs/owasp-modsecurity-crs":      "*",
+        "spiderlabs/owasp-modsecurity-crs":      "2.2.9",
         "symfony/class-loader":                  "2.4.*",
         "symfony/config":                        "2.4.*",
         "symfony/console":                       "2.4.*",
@@ -42,8 +46,8 @@
         "symfony/twig-bridge":                   "2.4.*",
         "symfony/validator":                     "2.4.*",
         "symfony/yaml":                          "2.4.*",
-        "twbs/bootstrap":                        "*",
-        "twig/extensions":                       "*"
+        "twbs/bootstrap":                        "3.1.1",
+        "twig/extensions":                       "1.0.*"
     },
     "require-dev": {
         "facebook/xhprof":               "dev-master",
@@ -55,6 +59,21 @@
         {
             "type": "git",
             "url": "https://github.com/facebook/xhprof"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "cortext/silex-simpleuser",
+                "version": "0.6.3",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/cortext/silex-simpleuser",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0": { "SimpleUser": "src/" }
+                }
+            }
         },
         {
             "type": "package",
